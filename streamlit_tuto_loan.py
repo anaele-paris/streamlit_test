@@ -1,5 +1,6 @@
 # loan example
 # from https://www.datacamp.com/tutorial/streamlit
+import streamlit as st
 
 @st.cache(suppress_st_warning=True)
 
