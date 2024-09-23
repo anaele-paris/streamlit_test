@@ -148,6 +148,7 @@ if st.button("Predict"):
 
     # save prediction to pickle file
     data_pred = feature_list + [prediction]
-    pickle.dump(prediction, open("prediction.pkl", "wb"))    
+    with open("prediction.pkl", "wb") as f:
+        pickle.dump(data_pred, f)    
 
 
