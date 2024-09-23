@@ -3,6 +3,7 @@
 
 import streamlit as st
 import numpy as np
+import pickle
 # import pandas as pd
 
 @st.cache_data( ttl = 3600 ) #ttl (time to live) 
@@ -131,11 +132,11 @@ if st.button("Predict"):
     #     st.success(    'Congratulations!! you will get the loan from Bank'    )            
     #     st.markdown(    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',    
     #     unsafe_allow_html=True,    )
-
-    if ApplicantIncome < 5000:            
+    TotalIncome = ApplicantIncome + CoapplicantIncome
+    if TotalIncome < 5000:            
         st.error(    'According to our Calculations, you will not get the loan from Bank'    ) 
         prediction = 0           
-    elif ApplicantIncome > 5000:            
+    elif TotalIncome > 5000:            
         st.success(    'Congratulations!! you will get the loan from Bank'    )
         prediction = 1
     else:
