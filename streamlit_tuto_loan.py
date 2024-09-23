@@ -5,14 +5,14 @@ import streamlit as st
 import numpy as np
 # import pandas as pd
 
-@st.cache_data(suppress_st_warning=True, ttl = 3600 ) #ttl (time to live) 
+@st.cache_data( ttl = 3600 ) #ttl (time to live) 
 def get_fvalue(val):    
     feature_dict = {"No":1,"Yes":2}    
     for key,value in feature_dict.items():        
         if val == key:            
             return value
 
-@st.cache_data(suppress_st_warning=True, ttl = 3600 ) #ttl (time to live)       
+@st.cache_data( ttl = 3600 ) #ttl (time to live)       
 def get_value(val,my_dict):    
         for key,value in my_dict.items():        
             if val == key:            
