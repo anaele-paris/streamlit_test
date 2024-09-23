@@ -133,7 +133,10 @@ if st.button("Predict"):
     #     st.markdown(    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',    
     #     unsafe_allow_html=True,    )
     TotalIncome = ApplicantIncome + CoapplicantIncome
-    if TotalIncome < 5000:            
+    if TotalIncome == 0:            
+        st.success(    'Both incomes are at 0, Please fill in your incomes'    )
+        prediction = -1
+    elif TotalIncome < 5000:            
         st.error(    'According to our Calculations, you will not get the loan from Bank'    ) 
         prediction = 0           
     elif TotalIncome > 5000:            
